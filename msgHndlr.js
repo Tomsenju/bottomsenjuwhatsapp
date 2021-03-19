@@ -271,32 +271,32 @@ module.exports = msgHandler = async (client, message) => {
             if (!isGroupMsg) return client.reply(from, 'Este comando só pode ser usado em grupos!', id)
             if (!isGroupAdmins) return client.reply(from, 'Este comando só pode ser usado pelo Admin do grupo', id)
             if (args.length === 1) return client.reply(from, 'Selecione habilitar 1 ou desabilitar! 0 ', id)
-            if (args[1].toLowerCase() === 'habilitar 👍') {
+            if (args[1].toLowerCase() === 'enable') {
                 nsfw_.push(chat.id)
                 fs.writeFileSync('./lib/NSFW.json', JSON.stringify(nsfw_))
                 client.reply(from, 'Comando NSWF ativado com sucesso neste grupo! envie o comando *!nsfwmenu* para descobrir o menu', id)
-            } else if (args[1].toLowerCase() === 'Desabilitar 👎') {
+            } else if (args[1].toLowerCase() === 'disable') {
                 nsfw_.splice(chat.id, 1)
                 fs.writeFileSync('./lib/NSFW.json', JSON.stringify(nsfw_))
                 client.reply(from, 'Comando NSFW desativado com sucesso neste grupo!', id)
             } else {
-                client.reply(from, 'Selecione habilitar 1 ou desabilitar! 0', id)
+                client.reply(from, 'Selecione enable para habilitar ou disable para desabilitar! 0', id)
             }
             break
         case '!welcome':
             if (!isGroupMsg) return client.reply(from, 'Este comando só pode ser usado em grupos!', id)
             if (!isGroupAdmins) return client.reply(from, 'Este comando só pode ser usado pelo Admin do grupo', id)
             if (args.length === 1) return client.reply(from, 'Selecione habilitar ou desabilitar!', id)
-            if (args[1].toLowerCase() ===('Habilitado 👍') {
+            if (args[1].toLowerCase() ===('enable') {
                 welkom.push(chat.id)
                 fs.writeFileSync('./lib/welcome.json', JSON.stringify(welkom))
                 client.reply(from, 'O recurso de boas-vindas foi ativado com sucesso neste grupo!', id)
-            } else if (args[1].toLowerCase() === 'Desabilitado 👎') {
+            } else if (args[1].toLowerCase() === 'disable') {
                 welkom.splice(chat.id, 1)
                 fs.writeFileSync('./lib/welcome.json', JSON.stringify(welkom))
                 client.reply(from, 'O recurso de boas-vindas foi desativado com sucesso neste grupo!', id)
             } else {
-                client.reply(from, 'Selecione habilitar ou desabilitar', id)
+                client.reply(from, 'Selecione enable para habilitar ou disable para desabilitar', id)
             }
             break
         case '!nsfwmenu':
