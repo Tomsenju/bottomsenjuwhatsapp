@@ -287,7 +287,7 @@ module.exports = msgHandler = async (client, message) => {
             if (!isGroupMsg) return client.reply(from, 'Este comando só pode ser usado em grupos!', id)
             if (!isGroupAdmins) return client.reply(from, 'Este comando só pode ser usado pelo Admin do grupo', id)
             if (args.length === 1) return client.reply(from, 'Selecione habilitar ou desabilitar!', id)
-            if (args[1].toLowerCase() ===('enable') {
+            if (args[1].toLowerCase() ===('enable')) {
                 welkom.push(chat.id)
                 fs.writeFileSync('./lib/welcome.json', JSON.stringify(welkom))
                 client.reply(from, 'O recurso de boas-vindas foi ativado com sucesso neste grupo!', id)
